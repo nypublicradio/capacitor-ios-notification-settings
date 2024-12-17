@@ -1,0 +1,1 @@
+# capacitor-ios-notification-settings
