@@ -14,7 +14,7 @@
     "ios/Sources",
     "ios/Tests",
     "Package.swift",
-    "CapacitorIosNotificationSettings.podspec"
+    "NypublicradioCapacitorIosNotificationSettings.podspec"
   ],
   "author": "NYPR",
   "license": "MIT",
