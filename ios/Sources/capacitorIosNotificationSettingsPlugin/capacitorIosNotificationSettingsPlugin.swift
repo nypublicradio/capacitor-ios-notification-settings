@@ -13,7 +13,8 @@ public class capacitorIosNotificationSettingsPlugin: CAPPlugin, CAPBridgedPlugin
     // Add the openNotificationSettings method to the pluginMethods array
     public let pluginMethods: [CAPPluginMethod] = [
         CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise),
-        CAPPluginMethod(name: "openNotificationSettings", returnType: CAPPluginReturnPromise)
+        CAPPluginMethod(name: "openNotificationSettings", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "openBaseSettings", returnType: CAPPluginReturnPromise)
     ]
     private let implementation = capacitorIosNotificationSettings()
 
@@ -23,7 +24,7 @@ public class capacitorIosNotificationSettingsPlugin: CAPPlugin, CAPBridgedPlugin
             "value": implementation.echo(value)
         ])
     }
-
+    
     @objc func openNotificationSettings(_ call: CAPPluginCall) {
         DispatchQueue.main.async {
             if #available(iOS 16.0, *) {
@@ -40,6 +41,17 @@ public class capacitorIosNotificationSettingsPlugin: CAPPlugin, CAPBridgedPlugin
                 } else {
                     call.reject("Failed to open notification settings.")
                 }
+            }
+        }
+    }
+
+    @objc func openBaseSettings(_ call: CAPPluginCall) {
+        DispatchQueue.main.async {
+            if let appSettings = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(appSettings) {
+                UIApplication.shared.open(appSettings)
+                call.resolve()
+            } else {
+                call.reject("Failed to open settings.")
             }
         }
     }
