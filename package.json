@@ -4,7 +4,7 @@
     "type": "git",
     "url": "git+https://github.com/nypublicradio/capacitor-ios-notification-settings.git"
   },
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Plugin to get direct access to the app's notification settings page in the settings",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
