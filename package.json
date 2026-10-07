@@ -1,7 +1,10 @@
 {
   "name": "@nypublicradio/capacitor-ios-notification-settings",
-  "repository": "git://github.com/nypublicradio/capacitor-ios-notification-settings.git",
-  "version": "1.0.4",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nypublicradio/capacitor-ios-notification-settings.git"
+  },
+  "version": "1.0.5",
   "description": "Plugin to get direct access to the app's notification settings page in the settings",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -18,10 +21,6 @@
   ],
   "author": "NYPR",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nypublicradio/capacitor-ios-notification-settings.git"
-  },
   "bugs": {
     "url": "https://github.com/nypublicradio/capacitor-ios-notification-settings/issues"
   },
@@ -47,23 +46,23 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@capacitor/android": "^6.0.0",
-    "@capacitor/core": "^6.0.0",
-    "@capacitor/docgen": "^0.2.2",
-    "@capacitor/ios": "^6.0.0",
+    "@capacitor/android": "^8.5.1",
+    "@capacitor/core": "^8.5.1",
+    "@capacitor/docgen": "^0.3.1",
+    "@capacitor/ios": "^8.5.1",
     "@ionic/eslint-config": "^0.4.0",
     "@ionic/prettier-config": "^4.0.0",
     "@ionic/swiftlint-config": "^2.0.0",
-    "eslint": "^8.57.0",
-    "prettier": "^3.3.3",
-    "prettier-plugin-java": "^2.6.4",
-    "rimraf": "^6.0.1",
-    "rollup": "^4.24.0",
+    "eslint": "^8.57.1",
+    "prettier": "^3.6.2",
+    "prettier-plugin-java": "^2.7.7",
+    "rimraf": "^6.1.0",
+    "rollup": "^4.53.2",
     "swiftlint": "^2.0.0",
-    "typescript": "~4.1.5"
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
-    "@capacitor/core": "^6.0.0"
+    "@capacitor/core": ">=8.0.0"
   },
   "prettier": "@ionic/prettier-config",
   "swiftlint": "@ionic/swiftlint-config",
@@ -77,5 +76,8 @@
     "android": {
       "src": "android"
     }
+  },
+  "dependencies": {
+    "@capacitor/cli": "^8.0.0"
   }
 }
